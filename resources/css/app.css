@@ -1,0 +1,102 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+    --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-heading: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+}
+
+/* Soutprint.In Design System Tokens */
+:root {
+    --color-dark-bg: #020C20;
+    --color-dark-strip: #06142E;
+    --color-light-1: #F7FAFC;
+    --color-light-2: #EAF2F8;
+    --color-text-light: #0B1B33;
+    --color-text-dark: #E6EEF7;
+    --color-accent-dark: #0BBEFF;
+    --color-accent-light: #0870B8;
+    --color-card-border: #D5E1EC;
+}
+
+/* Global Typography & Viewport Bounds */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-sans);
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--color-text-light);
+    background-color: var(--color-dark-bg);
+    max-width: 100vw;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    line-height: 1.25;
+}
+
+img, svg, video {
+    max-width: 100%;
+}
+
+/* Subtle standard transitions (150-200ms) */
+a, button, input, select, textarea, .card-hover {
+    transition: background-color 180ms ease, color 180ms ease, border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+}
+
+/* Standard Minimal Card */
+.card-clean {
+    background-color: #FFFFFF;
+    border: 1px solid var(--color-card-border);
+    border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(11, 27, 51, 0.04);
+}
+
+.card-clean:hover {
+    border-color: #BACEDB;
+    box-shadow: 0 4px 12px rgba(11, 27, 51, 0.07);
+}
+
+/* Custom Scrollbar Minimal */
+::-webkit-scrollbar {
+    width: 7px;
+    height: 7px;
+}
+
+::-webkit-scrollbar-track {
+    background: #020C20;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #1B2B47;
+    border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #0870B8;
+}
+
+/* Touch-friendly Horizontal Scrolling */
+.touch-scroll {
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+}
+
+.scrollbar-none::-webkit-scrollbar {
+    display: none;
+}
+.scrollbar-none {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
